@@ -2,43 +2,43 @@ import java.util.Scanner;
 public class Practice1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите валюту: ");
-        String value = sc.nextLine();
+        System.out.print("Введите исходную валюту: ");
+        String fromCurrency = sc.nextLine();
         System.out.print("Введите сумму: ");
         double amount = sc.nextDouble();
         sc.nextLine();
-            if (value.equals("Рубль")) {
-                System.out.println("Перевести в Доллар или в Теңге: ");
-                String convert = sc.nextLine();
-                if (convert.equals("Доллар")) {
-                    System.out.println(amount + " Рубль -> " + amount / 79 + "$");
-                } else if ((convert.equals("Теңге"))) {
-                    System.out.println(amount + " Рубль " + amount * 6 + "Теңге");
-                } else {
-                    System.out.println("Ошибка");
-                }
-            } else if (value.equals("Теңге")) {
-                System.out.println("Перевести в Доллар или в Рубль: ");
-                String transfer = sc.nextLine();
-                if (transfer.equals("Доллар")) {
-                    System.out.println(amount + " Теңге -> " + amount / 474 + " $");
-                } else if (transfer.equals("Рубль")) {
-                    System.out.println(amount + " Теңге -> " + amount / 6 + " Рублей");
-                } else {
-                    System.out.println("Ошибка");
-                }
-            } else if (value.equals("Доллар")) {
-                System.out.println("Перевести в Рубль или Теңге?");
-                String target = sc.nextLine();
-                if (target.equals("Теңге")) {
-                    System.out.println(amount + " Доллар -> " + amount * 474 + " Теңге");
-                } else if (target.equals("Рубль")) {
-                    System.out.println(amount + " Доллар -> " + amount * 79 + " Рублей");
-                } else {
-                    System.out.println("Ошибка");
-                }
+        if (fromCurrency.equals("Рубль")) {
+            System.out.print("Перевести в Доллар или Теңге: ");
+            String toCurrency = sc.nextLine();
+            if (toCurrency.equals("Доллар")) {
+                System.out.println(amount + " ₽ -> " + amount / 79 + " $");
+            } else if (toCurrency.equals("Теңге")) {
+                System.out.println(amount + " ₽ -> " + amount * 6 + " ₸");
             } else {
-                System.out.println("Ошибка");
+                System.out.println("Ошибка: неизвестная валюта.");
+            }
+        } else if (fromCurrency.equals("Теңге")) {
+            System.out.print("Перевести в Доллар или Рубль: ");
+            String toCurrency = sc.nextLine();
+            if (toCurrency.equals("Доллар")) {
+                System.out.println(amount + " ₸ -> " + amount / 474 + " $");
+            } else if (toCurrency.equals("Рубль")) {
+                System.out.println(amount + " ₸ -> " + amount / 6 + " ₽");
+            } else {
+                System.out.println("Ошибка: неизвестная валюта.");
+            }
+        } else if (fromCurrency.equals("Доллар")) {
+            System.out.print("Перевести в Рубль или Теңге: ");
+            String toCurrency = sc.nextLine();
+            if (toCurrency.equals("Теңге")) {
+                System.out.println(amount + " $ -> " + amount * 474 + " ₸");
+            } else if (toCurrency.equals("Рубль")) {
+                System.out.println(amount + " $ -> " + amount * 79 + " ₽");
+            } else {
+                System.out.println("Ошибка: неизвестная валюта.");
+            }
+        } else {
+            System.out.println("Ошибка: неизвестная исходная валюта.");
         }
     }
 }
