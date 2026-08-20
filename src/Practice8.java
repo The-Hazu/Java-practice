@@ -12,9 +12,10 @@ public class Practice8 {
         quiz[1] = new Question1("2. Какой модификатор делает поле доступным только внутри своего класса?", new String[]{"A. public","B. protected","C. private","D. static"}, 'C');
         quiz[2] = new Question1("3. Что означает this внутри метода или конструктора?", new String[]{"A. Ссылка на текущий объект","B. Ссылка на родительский класс","C. Создание нового объекта","D. Удаление текущего объекта"}, 'A');
         quiz[3] = new Question1("4. Для чего используется toString()?", new String[]{"A. Для сравнения двух объектов","B. Для преобразования String в int","C. Для получения строкового представления объекта","D. Для создания конструктора"}, 'C');
-        quiz[4] = new Question1("5. Что произойдёт здесь?", new String[]{"A. Dog автоматически становится Animal навсегда","B. Объект Dog создаётся и хранится в переменной типа Animal","C. Создаётся два объекта","D. Код всегда вызовет ошибку"}, 'B');
+        quiz[4] = new Question1("5. Что такое интерфейс в Java?", new String[]{"A. Класс, который нельзя создать","B. Контракт, который определяет, какие методы класс должен реализовать","C. Переменная, которая хранит объект","D. Специальный тип массива"}, 'B');
         for (int currentPlayer = 0; currentPlayer < players.length; currentPlayer++) {
             System.out.println("Ход игрока: " + players[currentPlayer].toString());
+            System.out.println("-------------------------------");
             for (int j = 0; j < quiz.length; j++) {
                 quiz[j].printQuestion();
                 quiz[j].printAnswer();
@@ -30,15 +31,15 @@ public class Practice8 {
                 }
             }
         }
-        System.out.println(players[0].toString());
-        System.out.println(players[1].toString());
-        System.out.println(players[2].toString());
+        for (Player1 player : players) {
+            System.out.println(player.toString());
+        }
     }
 }
 class Question1 {
     private String question;
-    private String answer[];
-    char correctAnswer;
+    private String[] answer;
+    private char correctAnswer;
     public Question1(String question, String answer [], char correctAnswer) {
         this.question = question;
         this.answer = answer;
