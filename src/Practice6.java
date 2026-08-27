@@ -26,8 +26,8 @@ public class Practice6 {
 }
 class Question {
     private final String questionText;
-    private String[] options;
-    private char correctAnswer;
+    private final String[] options;
+    private final char correctAnswer;
     Question(String questionText, String[] options, char correctAnswer) {
         this.questionText = questionText;
         this.options = options;
