@@ -13,13 +13,13 @@ public class Practice2 {
                 sc.next();
                 continue;
             }
-            int amount = sc.nextInt();
+            int userGuess = sc.nextInt();
             attemptCount += 1;
             System.out.println("Попыток: " + attemptCount);
-            if (amount == targetNumber) {
+            if (userGuess == targetNumber) {
                 System.out.println("Победа!");
                 break;
-            } else if (amount < targetNumber) {
+            } else if (userGuess < targetNumber) {
                 System.out.println("Больше");
             } else {
                 System.out.println("Меньше");
