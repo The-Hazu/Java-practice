@@ -16,6 +16,10 @@ public class Practice3 {
                 continue;
             }
             int num = sc.nextInt();
+            if (num < 1 || num > 5) {
+                System.out.println("Ошибка! Введите число строго от 1 до 5.");
+                continue;
+            }
             int checkIndex = num - 1;
             if (field[checkIndex] == true) {
                 System.out.println("Вы проиграли лол!");
