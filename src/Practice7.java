@@ -1,21 +1,21 @@
 public class Practice7 {
     public static void main(String[] args) {
-        Magazine product1 = new Magazine("PlayStation 5",649);
-        Magazine product2 = new Magazine("Iphone 17 pro max",1199);
-        Magazine product3 = new Magazine("Lenovo Loq 16",1099);
-        Card card = new Card();
-        card.addProduct(product1);
-        card.addProduct(product2);
-        card.addProduct(product3);
-        card.removeProduct(product1);
+        Product product1 = new Product("PlayStation 5",649);
+        Product product2 = new Product("Iphone 17 pro max",1199);
+        Product product3 = new Product("Lenovo Loq 16",1099);
+        Cart cart = new Cart();
+        cart.addProduct(product1);
+        cart.addProduct(product2);
+        cart.addProduct(product3);
+        cart.removeProduct(product1);
         product2.showProductInfo();
-        card.showBasket();
+        cart.showBasket();
     }
 }
-class Magazine {
+class Product {
     String product;
     int value;
-    Magazine(String product, int value) {
+    Product(String product, int value) {
         this.product = product;
         this.value = value;
     }
@@ -26,18 +26,18 @@ class Magazine {
         System.out.println("------------------------------------");
     }
 }
-class Card {
+class Cart {
     int basket = 0;
     void showBasket() {
         System.out.println("Стоимость корзины: " + basket + "$");
         System.out.println("------------------------------------");
     }
-    void removeProduct(Magazine product) {
+    void removeProduct(Product product) {
         basket = basket - product.value;
         System.out.println(product.product + " удалён из корзины");
         System.out.println("------------------------------------");
     }
-    void addProduct(Magazine product) {
+    void addProduct(Product product) {
         basket = basket + product.value;
         System.out.println(product.product + " добавлен в корзину");
         System.out.println("------------------------------------");
