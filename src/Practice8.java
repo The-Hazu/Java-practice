@@ -21,6 +21,7 @@ public class Practice8 {
                 quiz[j].printAnswer();
                 char correctAnswer = quiz[j].getCorrectAnswer();
                 String userAnswer = sc.nextLine();
+                if (userAnswer.isEmpty()) continue;
                 char usans = userAnswer.charAt(0);
                 if (usans == correctAnswer) {
                     System.out.println("Correct!");
@@ -40,7 +41,7 @@ class Question1 {
     private String question;
     private String[] answer;
     private char correctAnswer;
-    public Question1(String question, String answer [], char correctAnswer) {
+    public Question1(String question, String[] answer, char correctAnswer) {
         this.question = question;
         this.answer = answer;
         this.correctAnswer = correctAnswer;
